@@ -14,7 +14,7 @@ use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 
 #[AsEventListener(
-    identifier: 'f-emptypage-mark/modify-page-tree-items',
+    identifier: 'fonda-empty-page-mark/modify-page-tree-items',
 )]
 final readonly class ModifyPageTreeItems
 {

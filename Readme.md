@@ -7,7 +7,7 @@ Especially when starting a new project and creating a page structure can often l
 
 ## Installation
 
-Use `composer require fonda/f_emptypage_mark` to install the extension.
+Use `composer require fonda/empty-page-mark` to install the extension.
 
 ## Credits
 

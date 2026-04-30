@@ -1,5 +1,5 @@
 {
-	"name": "fonda/f-emptypage-mark",
+	"name": "fonda/empty-page-mark",
 	"description": "Mark pages as empty in backend page tree",
 	"type": "typo3-cms-extension",
 	"license": "GPL-2.0-or-later",
@@ -15,7 +15,7 @@
 		}
 	},
 	"require": {
-		"typo3/cms-backend": "^13, ^14"
+		"typo3/cms-backend": "^13 || ^14"
 	},
 	"extra": {
 		"typo3/cms": {

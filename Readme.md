@@ -1,4 +1,4 @@
-# TYPO3 Extension `f_emptypage_mark`
+# TYPO3 Extension `empty_page_mark`
 
 This extension marks pages without content elements in the TYPO3 page tree with a warning indicator.
 Especially when starting a new project and creating a page structure can often lead to pages which have been created but still need content to be placed at.

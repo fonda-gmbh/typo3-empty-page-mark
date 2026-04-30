@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" original="messages" datatype="plaintext" product-name="f_emptypage_mark" date="2026-04-29T00:00:00+02:00">
+		<header></header>
+		<body>
+			<trans-unit id="emptyPage">
+				<source>Empty page</source>
+				<target>Leere Seite</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

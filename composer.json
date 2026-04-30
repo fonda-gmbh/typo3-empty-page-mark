@@ -1,0 +1,25 @@
+{
+	"name": "fonda/f-emptypage-mark",
+	"description": "Mark pages as empty in backend page tree",
+	"type": "typo3-cms-extension",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Georg Ringer",
+			"role": "Developer"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Fonda\\EmptyPageMark\\": "Classes"
+		}
+	},
+	"require": {
+		"typo3/cms-backend": "^13, ^14"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "empty_page_mark"
+		}
+	}
+}

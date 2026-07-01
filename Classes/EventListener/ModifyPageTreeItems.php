@@ -18,7 +18,7 @@ use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 )]
 final readonly class ModifyPageTreeItems
 {
-    private const array IGNORED_DOKTYPES = [3, 4, 6, 7199, 254];
+    private const array IGNORED_DOKTYPES = [3, 4, 6, 199, 254];
 
     public function __construct(
         private ConnectionPool $connectionPool,

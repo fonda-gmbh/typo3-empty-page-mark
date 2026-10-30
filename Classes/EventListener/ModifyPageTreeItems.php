@@ -34,7 +34,7 @@ final readonly class ModifyPageTreeItems
                 continue;
             }
             $item['statusInformation'][] = new StatusInformation(
-                label: $this->getLanguageService()->sL('LLL:EXT:f_emptyge_mark/Resources/Private/Language/backend.xlf:emptyPage'),
+                label: $this->getLanguageService()->sL('LLL:EXT:empty_page_mark/Resources/Private/Language/backend.xlf:emptyPage'),
                 severity: ContextualFeedbackSeverity::WARNING,
                 priority: 0,
                 icon: 'actions-exclamation-circle-alt',

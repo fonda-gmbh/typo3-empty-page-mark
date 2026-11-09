@@ -17,9 +17,23 @@
 	"require": {
 		"typo3/cms-backend": "^13 || ^14"
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"Fonda\\EmptyPageMark\\Tests\\": "Tests"
+		}
+	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "empty_page_mark"
 		}
+	},
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^12"
 	}
 }

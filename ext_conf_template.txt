@@ -1,0 +1,2 @@
+# cat=basic; type=string; label=Ignored page types: Comma-separated doktypes never marked as empty (default: link, shortcut, backend user section, divider, folder)
+ignoredDoktypes = 3,4,6,199,254

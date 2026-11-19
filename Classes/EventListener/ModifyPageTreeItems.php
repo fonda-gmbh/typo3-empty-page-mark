@@ -30,7 +30,9 @@ final readonly class ModifyPageTreeItems
         foreach ($items as &$item) {
             $pageId = (int)($item['_page']['uid'] ?? 0);
             $doktype = (int)($item['_page']['doktype'] ?? 0);
-            if ($pageId === 0 || in_array($doktype, self::IGNORED_DOKTYPES, true) || !$this->isEmpty($pageId)) {
+            // "Show content from page" renders the content of another page, so that one must be checked
+            $contentPageId = (int)($item['_page']['content_from_pid'] ?? 0) ?: $pageId;
+            if ($pageId === 0 || in_array($doktype, self::IGNORED_DOKTYPES, true) || !$this->isEmpty($contentPageId)) {
                 continue;
             }
             $item['statusInformation'][] = new StatusInformation(

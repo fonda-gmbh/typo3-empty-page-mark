@@ -11,6 +11,11 @@ Pages using "Show content from page" (`content_from_pid`) are checked against th
 
 Use `composer require fonda/empty-page-mark` to install the extension.
 
+## Configuration
+
+In *Admin Tools > Settings > Extension Configuration > empty_page_mark*, `ignoredDoktypes` lists the page types that are never marked as empty.
+Default: `3,4,6,199,254` (link, shortcut, backend user section, divider, folder).
+
 ## Credits
 
 This extension was created by Georg Ringer for [Fonda GmbH](https://www.fonda.at), Vienna.

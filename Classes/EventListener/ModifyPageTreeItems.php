@@ -8,21 +8,27 @@ use Doctrine\DBAL\Exception as DbalException;
 use TYPO3\CMS\Backend\Controller\Event\AfterPageTreeItemsPreparedEvent;
 use TYPO3\CMS\Backend\Dto\Tree\Status\StatusInformation;
 use TYPO3\CMS\Core\Attribute\AsEventListener;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 #[AsEventListener(
     identifier: 'fonda-empty-page-mark/modify-page-tree-items',
 )]
 final readonly class ModifyPageTreeItems
 {
-    private const array IGNORED_DOKTYPES = [3, 4, 6, 199, 254];
+    /** @var list<int> */
+    private array $ignoredDoktypes;
 
     public function __construct(
         private ConnectionPool $connectionPool,
-    ) {}
+        ExtensionConfiguration $extensionConfiguration,
+    ) {
+        $this->ignoredDoktypes = GeneralUtility::intExplode(',', (string)$extensionConfiguration->get('empty_page_mark', 'ignoredDoktypes'), true);
+    }
 
     public function __invoke(AfterPageTreeItemsPreparedEvent $event): void
     {
@@ -32,7 +38,7 @@ final readonly class ModifyPageTreeItems
             $doktype = (int)($item['_page']['doktype'] ?? 0);
             // "Show content from page" renders the content of another page, so that one must be checked
             $contentPageId = (int)($item['_page']['content_from_pid'] ?? 0) ?: $pageId;
-            if ($pageId === 0 || in_array($doktype, self::IGNORED_DOKTYPES, true) || !$this->isEmpty($contentPageId)) {
+            if ($pageId === 0 || in_array($doktype, $this->ignoredDoktypes, true) || !$this->isEmpty($contentPageId)) {
                 continue;
             }
             $item['statusInformation'][] = new StatusInformation(
